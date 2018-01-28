@@ -1,0 +1,32 @@
+<div class="jumbotron" *ngIf="item != null">
+  <div class="float-right">
+    <button type="button" *ngIf="bookBtn" class="btn btn-default" (click)="bookItem()">Reserver</button>
+    <button type="button" *ngIf="editBtn && userOK" class="btn btn-default" (click)="editItem()">Modifier</button>
+  </div>
+  <h1 class="display-3">{{item.name}}</h1>
+  <p>{{item.type}}</p>
+  <div class="lead">
+    <div class="row">
+      Proposé par {{item.owner.name}}
+    </div>
+    <hr class="my-4">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="text-center calendar-shrink">
+          <h3>{{ viewDate1 | calendarDate:('monthViewTitle'):'fr' }}</h3>
+          <mwl-calendar-month-view [viewDate]="viewDate1" [events]="item.lendings" [weekendDays]="[7,0]" [weekStartsOn]="1" [locale]="'fr'">
+          </mwl-calendar-month-view>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="text-center calendar-shrink">
+          <h3>{{ viewDate2 | calendarDate:('monthViewTitle'):'fr' }}</h3>
+          <mwl-calendar-month-view [viewDate]="viewDate2" [events]="item.lendings" [weekendDays]="[7,0]" [weekStartsOn]="1" [locale]="'fr'">
+          </mwl-calendar-month-view>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr class="my-4">
+  <p class="lead">{{item.description}}</p>
+</div>

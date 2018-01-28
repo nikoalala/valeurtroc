@@ -1,0 +1,8 @@
+.bordure-rouge {
+    border: thin dashed red;
+}
+
+.calendar-shrink {
+   /* transform: scale(0.40);*/
+   zoom:0.5;
+}

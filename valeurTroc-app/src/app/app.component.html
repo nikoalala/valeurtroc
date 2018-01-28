@@ -1,0 +1,10 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<navbar></navbar>
+
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+  <div *ngIf="user.name !== ''">
+    <p>Utilisateur : {{user.name}} ({{user.mail}}) / {{user.$uid}}
+      <p>
+  </div>
+</div>
